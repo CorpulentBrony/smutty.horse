@@ -1,0 +1,12 @@
+gay/*
+includes/secrets.inc.php
+moe/
+old/
+pomf/
+.travis.yml
+file_count.txt
+gmon.out
+smutty_db_password.cnf
+test.php
+!gay/favicon.ico
+!gay/index.html
