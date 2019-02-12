@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" 🦄>
+	<head>
+		<link href="/modules/index.mjs" importance="high" rel="modulepreload">
+		<link href="https://u.smutty.horse/" rel="dns-prefetch preconnect">
+		<!--# set value="Smutty Horse · Pony File Hosting" var="title" -->
+		<!--# set value="A free simple to use file hosting service that lets you share your photos, documents, music, videos, and more with others." var="description" -->
+		<!--# set value="pony, clop, porn, images, sharing, sharex, pomf, smut, faggotry" var="keywords" -->
+		<!--# include file="/header.html" -->
+		<link as="image" href="/img/launch.svg?fill=%23c9c9c9" importance="low" rel="prefetch" type="image/svg+xml">
+		<link as="image" href="/img/launch.svg?fill=%23fff" importance="low" rel="prefetch" type="image/svg+xml">
+		<meta name="google-site-verification" content="fae6zmiygQPvGnW6ad1NmhnlGqsZf__OQYyn7ng7j1w">
+		<meta name="msvalidate.01" content="F22D6FD9077AEB86C48E282176E51F9C">
+		<link href="https://smutty.horse/" rel="canonical self" type="text/html">
+		<script async importance="high" src="/modules/index.mjs" type="module"></script>
+		<script async nomodule src="/index.js"></script>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Smutty Horse",
+						"item": "https://smutty.horse/"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<!--# include virtual="/body.php" -->
+		<main itemscope itemtype="https://schema.org/WebApplication">
+			<meta content="UtilitiesApplication" itemprop="applicationCategory">
+			<meta content="any" itemprop="operatingSystem">
+			<div class="jumbotron overlay">
+				<h1><span itemprop="name">Smutty Horse</span>~</h1>
+				<p class="lead">
+					Max upload size is <data value="134217728">128&nbsp;<abbr title="mebibyte">MiB</abbr></data>, read the <a href="faq.html" itemprop="softwareHelp" rel="help"><abbr title="Frequently Asked Questions">FAQ</abbr></a>
+				</p>
+				<form id="upload-form" enctype="multipart/form-data" method="post" action="upload.php?output=html">
+					<button aria-label="click to select file or files to upload" dropzone="copy" id="upload-btn" class="btn" type="button" title="Select or drop file(s)"></button>
+					<input data-max-size="128MiB" id="upload-input" multiple name="files[]" type="file">
+					<input type="submit" value="Submit">
+				</form>
+				<ul id="upload-filelist"></ul>
+				<template id="upload-filelist-item">
+					<li>
+						<span class="file-name"></span>
+						<span class="file-progress-container">
+							<progress class="file-progress" max="1"></progress>
+							<data class="progress-percent"></data>
+						</span>
+					</li>
+				</template>
+				<template id="upload-filelist-file-url">
+					<span class="file-url">
+						<a rel="noopener" target="_blank"></a>
+						<button aria-label="copy link to clipboard" class="upload-clipboard-btn" title="Copy Link to Clipboard">
+							<img alt="Copy" role="presentation" src="/img/glyphicons-512-copy.png" type="image/png">
+						</button>
+					</span>
+				</template>
+			</div>
+			<section class="alert alert-info">
+				<strong>Smutty Horse Web App:</strong> You can now install Smutty Horse as a Web app on those platforms that support this (such as Android) and use it as a sharing destination for your files.
+			</section>
+			<aside class="alert file-count">
+				<strong itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+					<link href="https://schema.org/ReceiveAction" itemprop="interactionType">
+					Currently hosting <!--# include file="file_count.txt" -->
+				</strong>
+			</aside>
+<!-- 			<p class="alert alert-error">
+				<strong>Malware scans are run daily</strong> &mdash; files identified as malware will be removed without notice.
+			</p> -->
+<!-- 			<p class="alert alert-info">
+				<strong>Smutty Horse is free to use, but our hosting costs are far from it</strong> &mdash; donations are what keep Smutty Horse alive, free, and fast.<span class="donate-btns"></span>
+			</p> -->
+			<meta content="true" itemprop="isAccessibleForFree">
+			<span itemprop="offers" itemscope itemtype="https://schema.org/Offer" role="presentation">
+				<meta content="0" itemprop="price">
+				<meta content="BTC" itemprop="priceCurrency">
+			</span>
+		</main>
+		<!--# include file="/footer.html" -->
+	</body>
+</html>
