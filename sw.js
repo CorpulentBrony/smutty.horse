@@ -4,7 +4,7 @@
 // https://developers.google.com/web/fundamentals/app-install-banners/
 // maybe use this?  https://developers.google.com/web/tools/workbox/
 
-const CACHE_VERSION = 42;
+const CACHE_VERSION = 44;
 const CACHE_NAME = `smutty-horse-cache-version-${self.String(CACHE_VERSION)}`;
 const CACHE_OPTIONS = { ignoreSearch: false };
 const DOMAIN = "smutty.horse";
@@ -14,7 +14,7 @@ const FILES_CACHED_MAP = [
 		"app.js",
 		"favicon.ico",
 		"favicon.png",
-		{ img: ["glyphicons-512-copy.png"] },
+		{ img: ["copy.svg"] },
 		"pomf.css"
 	] },
 	"https://www.google-analytics.com/analytics.js",

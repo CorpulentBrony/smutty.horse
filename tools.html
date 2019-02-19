@@ -25,80 +25,92 @@
 				]
 			}
 		</script>
+		<style>
+			main > ul > li > nav > ul { text-align: left; }
+			main > ul {
+				list-style: none;
+				padding-left: 0;
+			}
+			h2 { font-size: 2rem; }
+			h3 { font-size: 1rem; }
+			pre { white-space: pre-line; }
+		</style>
 	</head>
 	<body>
 		<!--# include virtual="/body.php" -->
 		<main>
-			<div class="jumbotron">
+			<header class="jumbotron">
 				<h1>Smutty Horse Tools</h1>
-			</div>
-			<section>
-				<h2>pomfload</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://github.com/ewhal/pomfload" rel="code-repository external noopener" target="_blank">https://github.com/ewhal/pomfload</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="https://twitter.com/AnonymousLink" rel="external noopener" target="_blank">https://twitter.com/AnonymousLink</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>limf</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://github.com/lich/limf" rel="code-repository external noopener" target="_blank">https://github.com/lich/limf</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="http://lich.github.io/" rel="external noopener" target="_blank">http://lich.github.io/</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>1339secure</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://github.com/AdrianKoshka/1339secure" rel="code-repository external noopener" target="_blank">https://github.com/AdrianKoshka/1339secure</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="mailto:adriankoshcha@teknik.io">adriankoshcha@teknik.io</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>ShareX</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://getsharex.com" rel="external noopener" target="_blank">https://getsharex.com</a></dd>
-					<dt>Custom Uploader</dt>
-					<dd><a download href="smutty.horse.sxcu">ShareX Custom Uploader</a></dd>
-					<dt>Source</dt>
-					<dd><a href="https://github.com/ShareX/ShareX" rel="code-repository external noopener" target="_blank">https://github.com/ShareX/ShareX</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="https://webchat.freenode.net/?channels=%23ShareX" rel="external noopener" target="_blank">#ShareX on irc.freenode.net</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>Gyazowin</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://github.com/avail/gyazowin" rel="code-repository external noopener" target="_blank">https://github.com/avail/gyazowin</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="https://twitter.com/4vail" rel="external noopener" target="_blank">https://twitter.com/4vail</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>Pomfshare</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://github.com/Nyubis/Pomfshare" rel="code-repository external noopener" target="_blank">https://github.com/Nyubis/Pomfshare</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="https://github.com/Nyubis" rel="external noopener" target="_blank">https://github.com/Nyubis</a></dd>
-				</dl>
-			</section>
-			<section>
-				<h2>Pomf Rehost</h2>
-				<dl>
-					<dt>Download</dt>
-					<dd><a href="https://git.fuwafuwa.moe/lesderid/pomf-rehost" rel="code-repository external noopener" target="_blank">https://git.fuwafuwa.moe/lesderid/pomf-rehost</a></dd>
-					<dt>Contact</dt>
-					<dd><a href="mailto:les@fuwafuwa.moe">les@fuwafuwa.moe</a></dd>
-				</dl>
-			</section>
+				<aside class="lead">
+					Easier uploading to <a href="/" rel="home index">Smutty Horse</a>
+				</aside>
+			</header>
+			<ul>
+				<li>
+					<h2>ShareX</h2>
+					<h3>Windows-based screen capture and file sharing</h3>
+					Easy to use and very powerful, this open source program is the standard tool for Windows users.  After installation, be sure to use <a download href="/smutty.horse.sxcu">our custom uploader</a>
+					<nav>
+						<ul>
+							<li><a href="https://getsharex.com" rel="external noopener" target="_blank">Download</a></li>
+							<li><a href="https://github.com/ShareX/ShareX" rel="code-repository external noopener" target="_blank">Source</a></li>
+							<li><a href="https://webchat.freenode.net/?channels=%23ShareX" rel="external noopener" target="_blank">#ShareX</a> on <a href="irc://chat.freenode.net:6667" rel="external noopener" target="_blank">irc.freenode.net</a></li>
+							<li><a download href="/smutty.horse.sxcu">Smutty Horse Uploader</a></li>
+						</ul>
+					</nav>
+				</li>
+				<li>
+					<h2>pomfload</h2>
+					<h3><abbr title="Portable Operating System Interface">POSIX</abbr>-compatible shell script</h3>
+					Upload files directly from the command line.  Just change the second line of the script to read <code>uppomf="https://smutty.horse/upload.php"</code>
+					<nav>
+						<ul>
+							<li><a href="https://github.com/ewhal/pomfload" rel="code-repository external noopener" target="_blank">Download</a></li>
+							<li><a href="https://twitter.com/AnonymousLink" rel="external noopener" target="_blank">Contact</a></li>
+						</ul>
+					</nav>
+				</li>
+				<li>
+					<h2>limf</h2>
+					<h3>Python-based uploading and encrypting</h3>
+					Can upload and encrypt/decrypt files to any pomf clones (including Smutty Horse).  Also includes a tool for making screenshots automatically
+					<nav>
+						<a href="https://github.com/lich/limf" rel="code-repository external noopener" target="_blank">Download</a>
+					</nav>
+				</li>
+				<li>
+					<h2>Pomf Rehost</h2>
+					<h3>Chrome browser extension</h3>
+					This should work if you choose Custom and use <code>https://smutty.horse</code> as the host name.  Not yet tested
+					<nav>
+						<ul>
+							<li><a href="https://git.fuwafuwa.moe/lesderid/pomf-rehost" rel="code-repository external noopener" target="_blank">Download</a></li>
+							<li><a href="mailto:les@fuwafuwa.moe" rel="external noopener" target="_blank">Contact</a></li>
+						</ul>
+					</nav>
+				</li>
+				<li>
+					<h2>Gyazowin</h2>
+					This appears to be a modified form of <a href="https://gyazo.com/" rel="external noopener">Gyazo</a>.  You'll want to compile this from source to use it with Smutty Horse.  Change line 794 in <code>gyazowin/gyazowin.cpp</code> to read:
+					<pre><code>const TCHAR* UPLOAD_SERVER = _T("smutty.horse");</code></pre>
+					No guarantees this will work
+					<nav>
+						<ul>
+							<li><a href="https://github.com/avail/gyazowin" rel="code-repository external noopener" target="_blank">Download</a></li>
+							<li><a href="https://twitter.com/4vail" rel="external noopener" target="_blank">Contact</a></li>
+						</ul>
+					</nav>
+				</li>
+				<li>
+					<h2>Pomfshare</h2>
+					<h3>Android share client</h3>
+					Adds a Pomfshare destination to your sharing menu on Android.  To get this to work with Smutty Horse, you'll need to modify at least the <code>app/src/main/java/science/itaintrocket/pomfshare/HostListActivity.java</code> file and add an entry that would look something like:
+					<pre><code>hosts[24] = new Host("smutty.horse", "https://smutty.horse/upload.php?output=gyazo", "128MiB", Host.Type.POMF);</code></pre>
+					No guarantees this one will work, though I am curious and may try to roll a version specifically for Smutty Horse at some point
+					<nav>
+						<a href="https://github.com/Nyubis/Pomfshare" rel="code-repository external noopener" target="_blank">Download</a>
+					</nav>
+				</li>
 		</main>
 		<!--# include file="/footer.html" -->
 	</body>

@@ -72,11 +72,13 @@ ul:-moz-only-whitespace { display: none; }
 ul:empty { display: none; }
 
 #smutty-bg {
-	filter: drop-shadow(0.6rem 0.6rem 4px rgba(0, 0, 0, 0.55));
 	transform: unset !important;
 	z-index: -999;
 }
-#smutty-bg img { max-width: 33vw; }
+#smutty-bg img {
+	max-width: 33vw;
+	filter: drop-shadow(0.6rem 0.6rem 4px rgba(0, 0, 0, 0.55));
+}
 @media (max-width: 96rem) {
 	#smutty-bg {
 		left: 0;
@@ -229,12 +231,12 @@ a.donate-btn:hover {
  */
 nav > ul,
 nav a {
-	color: #9fc9df;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
+nav a { color: #9fc9df; }
 nav > ul > li {
 	display: inline-block;
 	margin: 0;
@@ -267,9 +269,24 @@ nav > ul > li:last-child::after {
 button.upload-clipboard-btn {
 	background-color: transparent;
 	border: none;
-	height: 1.1rem;
+	cursor: pointer;
+	height: 1.7rem;
+	padding: 0;
+	width: 1.7rem;
 }
-button.upload-clipboard-btn img { filter: invert(79%); }
+button.upload-clipboard-btn::after {
+	background: no-repeat url(/img/copy.svg?fill=%23c9c9c9);
+	content: "";
+	display: inline-block;
+	height: 100%;
+	transition: background 0.25s;
+	width: 100%;
+}
+button.upload-clipboard-btn:hover::after, button.upload-clipboard-btn:focus::after, button.upload-clipboard-btn:active::after { background: no-repeat url(/img/copy.svg?fill=%23fff); }
+button.upload-clipboard-btn img {
+	filter: invert(79%);
+	width: 100%;
+}
 .error#upload-filelist .progress-percent {
 	color: #cd7e7d;
 }
@@ -277,6 +294,7 @@ button.upload-clipboard-btn img { filter: invert(79%); }
 	display: none;
 }
 #upload-filelist > li {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 0.4rem;
@@ -295,14 +313,47 @@ button.upload-clipboard-btn img { filter: invert(79%); }
 }
 .file-progress,
 .file-url {
+	align-items: center;
+	display: flex;
 	font-size: 0.9em;
 	margin-left: 0.6rem;
+	position: relative;
 }
 .file-url a { color: #c9c9c9; }
 .file-url a[target="_blank"]::after { background: no-repeat url(/img/launch.svg?fill=%23c9c9c9); }
 .file-url a:hover { color: #fff; }
 .file-url a[target="_blank"]:hover::after { background: no-repeat url(/img/launch.svg?fill=%23fff); }
 .progress-percent { float: right; }
+.file-url-copied {
+	background-color: #c9c9c9;
+	border: 1px solid;
+	border-radius: 8px;
+	color: #fff;
+	opacity: 1;
+	padding: 0 0.4rem;
+	position: absolute;
+	right: 1.7rem;
+	top: 0;
+	transition: opacity 5s cubic-bezier(0.64, 0.13, 0.86, -0.17);
+	visibility: hidden;
+}
+.file-url-copied::after { content: var(--file-url-copied-text, "Informative Copy Message"); }
+.file-url-copied.file-url-copied--success, .file-url-copied.file-url-copied--error {
+	opacity: 0;
+	visibility: visible;
+}
+.file-url-copied.file-url-copied--success {
+	background-color: #2e4d19;
+	border-color: #6b9447;
+	color: #c5e5c5;
+}
+.file-url-copied.file-url-copied--success::after { --file-url-copied-text: "Copied"; }
+.file-url-copied.file-url-copied--error {
+	background-color: #572222;
+	border-color: #63262f;
+	color: #d28e8d;
+}
+.file-url-copied.file-url-copied--error::after { --file-url-copied-text: "Can't copy"; }
 
 progress[value] {
 	/* Reset the default appearance */
@@ -429,5 +480,5 @@ body.js #upload-btn { display: inline-block !important; }
 	#upload-btn { display: inline-block !important; }
 }
 @media (prefers-reduced-motion: reduce) {
-	a, a[target="_blank"]::after, a.donate-btn, .alert, .jumbotron .btn, .jumbotron .lead { transition: none; }
+	a, a[target="_blank"]::after, a.donate-btn, .alert, .file-url-copied, .jumbotron .btn, .jumbotron .lead { transition: none; }
 }

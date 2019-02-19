@@ -58,9 +58,35 @@ class SmuttyRow {
 	}
 	set url(url) {
 		const link = this.initTemplateUrl();
+		const fileUrlCopied = this.templateUrl.querySelector(".file-url-copied");
+		let messageTimer = 0;
+		const showMessage = (isSuccess) => {
+			self.requestAnimationFrame(() => {
+				fileUrlCopied.setAttribute("aria-hidden", "false");
+				fileUrlCopied.classList.add(isSuccess ? "file-url-copied--success" : "file-url-copied--error");
+				fileUrlCopied.setAttribute("role", "alert");
+				self.clearTimeout(messageTimer);
+				messageTimer = self.setTimeout(() => {
+					self.requestAnimationFrame(() => {
+						fileUrlCopied.classList.remove("file-url-copied--success");
+						fileUrlCopied.classList.remove("file-url-copied--error");
+						fileUrlCopied.removeAttribute("role");
+						fileUrlCopied.setAttribute("aria-hidden", "true");
+					});
+				}, 5500);
+			});
+		};
+		const buttonHandler = async () => {
+			try {
+				await this.constructor.writeTextToClipboard(url);
+				showMessage(true);
+			} catch (error) {
+				showMessage(false);
+			}
+		};
 		link.textContent = url.replace(/.*?:\/\//g, "");
 		link.href = url;
-		this.templateUrl.querySelector("button").addEventListener("click", (event) => this.constructor.writeTextToClipboard(url).catch(console.error), { passive: true });
+		this.templateUrl.querySelector("button").addEventListener("click", () => buttonHandler().catch(console.error), { passive: true });
 		this.showUrl();
 	}
 	initTemplateUrl() {
@@ -69,8 +95,8 @@ class SmuttyRow {
 	}
 	showUrl() {
 		self.requestAnimationFrame(() => {
-			this.fileProgressContainer.visibility = "hidden";
-			this.element.removeChild(this.fileProgressContainer);
+			this.fileProgressContainer.setAttribute("aria-hidden", "true");
+			this.fileProgressContainer.hidden = true;
 			this.element.appendChild(this.templateUrl);
 		});
 	}
