@@ -3,10 +3,10 @@ includes/secrets.inc.php
 moe/
 old/
 pomf/
+vendor/
 .travis.yml
-file_count.txt
+file_count.html
 gmon.out
-smutty_db_password.cnf
 test.php
 !gay/favicon.ico
 !gay/index.html

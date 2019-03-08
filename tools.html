@@ -26,14 +26,21 @@
 			}
 		</script>
 		<style>
-			main > ul > li > nav > ul { text-align: left; }
-			main > ul {
+			main > ul, main > ul > li > nav > ul {
 				list-style: none;
 				padding-left: 0;
 			}
+			main > ul > li > nav > ul { text-align: left; }
+			main > ul > li > nav > ul > li { display: inline-block; }
+			main > ul > li > nav > ul > li::after {
+				content: "|";
+				margin: 0 0.6rem;
+				opacity: 0.3;
+			}
+			main > ul > li > nav > ul > li:last-child::after { content: ""; }
 			h2 { font-size: 2rem; }
 			h3 { font-size: 1rem; }
-			pre { white-space: pre-line; }
+			pre { overflow-x: auto; }
 		</style>
 	</head>
 	<body>
@@ -47,10 +54,10 @@
 			</header>
 			<ul>
 				<li>
-					<h2>ShareX</h2>
+					<h2 id="label--sharex">ShareX</h2>
 					<h3>Windows-based screen capture and file sharing</h3>
 					Easy to use and very powerful, this open source program is the standard tool for Windows users.  After installation, be sure to use <a download href="/smutty.horse.sxcu">our custom uploader</a>
-					<nav>
+					<nav aria-labelledby="label--sharex">
 						<ul>
 							<li><a href="https://getsharex.com" rel="external noopener" target="_blank">Download</a></li>
 							<li><a href="https://github.com/ShareX/ShareX" rel="code-repository external noopener" target="_blank">Source</a></li>
@@ -60,10 +67,10 @@
 					</nav>
 				</li>
 				<li>
-					<h2>pomfload</h2>
+					<h2 id="label--pomfload">pomfload</h2>
 					<h3><abbr title="Portable Operating System Interface">POSIX</abbr>-compatible shell script</h3>
 					Upload files directly from the command line.  Just change the second line of the script to read <code>uppomf="https://smutty.horse/upload.php"</code>
-					<nav>
+					<nav aria-labelledby="label--pomfload">
 						<ul>
 							<li><a href="https://github.com/ewhal/pomfload" rel="code-repository external noopener" target="_blank">Download</a></li>
 							<li><a href="https://twitter.com/AnonymousLink" rel="external noopener" target="_blank">Contact</a></li>
@@ -71,18 +78,18 @@
 					</nav>
 				</li>
 				<li>
-					<h2>limf</h2>
+					<h2 id="label--limf">limf</h2>
 					<h3>Python-based uploading and encrypting</h3>
 					Can upload and encrypt/decrypt files to any pomf clones (including Smutty Horse).  Also includes a tool for making screenshots automatically
-					<nav>
+					<nav aria-labelledby="label--limf">
 						<a href="https://github.com/lich/limf" rel="code-repository external noopener" target="_blank">Download</a>
 					</nav>
 				</li>
 				<li>
-					<h2>Pomf Rehost</h2>
+					<h2 id="label--pomf-rehost">Pomf Rehost</h2>
 					<h3>Chrome browser extension</h3>
 					This should work if you choose Custom and use <code>https://smutty.horse</code> as the host name.  Not yet tested
-					<nav>
+					<nav aria-labelledby="label--pomf-rehost">
 						<ul>
 							<li><a href="https://git.fuwafuwa.moe/lesderid/pomf-rehost" rel="code-repository external noopener" target="_blank">Download</a></li>
 							<li><a href="mailto:les@fuwafuwa.moe" rel="external noopener" target="_blank">Contact</a></li>
@@ -90,11 +97,11 @@
 					</nav>
 				</li>
 				<li>
-					<h2>Gyazowin</h2>
+					<h2 id="label--gyazowin">Gyazowin</h2>
 					This appears to be a modified form of <a href="https://gyazo.com/" rel="external noopener">Gyazo</a>.  You'll want to compile this from source to use it with Smutty Horse.  Change line 794 in <code>gyazowin/gyazowin.cpp</code> to read:
 					<pre><code>const TCHAR* UPLOAD_SERVER = _T("smutty.horse");</code></pre>
 					No guarantees this will work
-					<nav>
+					<nav aria-labelledby="label--gyazowin">
 						<ul>
 							<li><a href="https://github.com/avail/gyazowin" rel="code-repository external noopener" target="_blank">Download</a></li>
 							<li><a href="https://twitter.com/4vail" rel="external noopener" target="_blank">Contact</a></li>
@@ -102,12 +109,12 @@
 					</nav>
 				</li>
 				<li>
-					<h2>Pomfshare</h2>
+					<h2 id="label--pomfshare">Pomfshare</h2>
 					<h3>Android share client</h3>
 					Adds a Pomfshare destination to your sharing menu on Android.  To get this to work with Smutty Horse, you'll need to modify at least the <code>app/src/main/java/science/itaintrocket/pomfshare/HostListActivity.java</code> file and add an entry that would look something like:
 					<pre><code>hosts[24] = new Host("smutty.horse", "https://smutty.horse/upload.php?output=gyazo", "128MiB", Host.Type.POMF);</code></pre>
 					No guarantees this one will work, though I am curious and may try to roll a version specifically for Smutty Horse at some point
-					<nav>
+					<nav aria-labelledby="label--pomfshare">
 						<a href="https://github.com/Nyubis/Pomfshare" rel="code-repository external noopener" target="_blank">Download</a>
 					</nav>
 				</li>

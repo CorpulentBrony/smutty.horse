@@ -13,33 +13,25 @@
 :root {
 	color: #f2f2f2;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	height: 90vh;
-	line-height: 1.4rem;
+	font-size: 14px; /* sets value of 1rem for rest of document */
+	line-height: 1.6;
 }
 body {
 	height: 100%;
 	margin: 0;
 }
 address { display: inline; }
-main, main + footer {
-	-webkit-backdrop-filter: blur(5px);
-	backdrop-filter: blur(5px);
-	background-attachment: fixed;
-	background-color: rgba(45, 45, 45, 0.5);
-	/*background-image: linear-gradient(rgba(60, 60, 60, 0.5), rgba(0, 0, 0, 0.5));*/
-	border-radius: 0.3rem;
-	/*box-shadow: 0 0 1.1rem 0.6rem rgba(0, 0, 0, 0.5);*/
+main {
 	margin: 0 auto;
 	max-width: 50rem;
 	padding: 0 0.7rem;
-	transform: unset !important;
 }
-main + footer {
-	width: -webkit-fill-available;
-	width: -moz-fit-content;
-	width: -webkit-fit-content;
-	width: fit-content;
+main, main + footer {
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
+	background-color: rgba(45, 45, 45, 0.5);
+	border-radius: 0.3rem;
+	transform: unset !important;
 }
 
 /**
@@ -227,35 +219,6 @@ a.donate-btn:hover {
 }
 
 /**
- * NAVIGATION LINKS
- */
-nav > ul,
-nav a {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-nav a { color: #9fc9df; }
-nav > ul > li {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	cursor: default;
-}
-nav > ul > li::after {
-	content: "|";
-	margin: 0 0.6rem;
-	opacity: 0.3;
-}
-nav > ul > li:last-child::after {
-	content: "";
-	margin: 0;
-}
-
-
-
-/**
  * UPLOAD FILE LIST
  */
 #upload-filelist {
@@ -412,9 +375,6 @@ progress[value]::-webkit-progress-bar {
 /*@media (min-width: 91.4rem) {
 	body { background-image: url("/grill_large.php"), linear-gradient(#3c3c3c, #000); }
 }*/
-@media (max-width: 50rem) {
-	main, main + footer { box-shadow: unset; }
-}
 @media only screen and (max-device-width: 22.9rem), only screen and (max-width: 28.6rem) {
 	body {
 		padding: 0.7rem 0 0 0;
@@ -460,11 +420,11 @@ progress[value]::-webkit-progress-bar {
 	.alert-error {
 		background-color: rgba(96, 21, 21, 0.75);
 	}
-	nav {
+/*	nav {
 		background-color: rgba(38, 38, 38, 0.75);
 		border: #262626;
 		padding: 0.7rem 0;
-	}
+	}*/
 }
 /*
  * no js

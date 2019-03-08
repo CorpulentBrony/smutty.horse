@@ -4,7 +4,7 @@
 // https://developers.google.com/web/fundamentals/app-install-banners/
 // maybe use this?  https://developers.google.com/web/tools/workbox/
 
-const CACHE_VERSION = 44;
+const CACHE_VERSION = 45;
 const CACHE_NAME = `smutty-horse-cache-version-${self.String(CACHE_VERSION)}`;
 const CACHE_OPTIONS = { ignoreSearch: false };
 const DOMAIN = "smutty.horse";

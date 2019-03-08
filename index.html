@@ -45,9 +45,9 @@
 			<div class="jumbotron">
 				<h1><span itemprop="name">Smutty Horse</span>~</h1>
 				<p class="lead">
-					Max upload size is <data value="134217728">128&nbsp;<abbr title="mebibyte">MiB</abbr></data>, read the <a href="faq.html" itemprop="softwareHelp" rel="help"><abbr title="Frequently Asked Questions">FAQ</abbr></a>
+					Max upload size is <data value="134217728">128&nbsp;<abbr title="mebibyte">MiB</abbr></data>, read the <a href="/faq.html" itemprop="softwareHelp" rel="help privacy-policy terms-of-service"><abbr title="Frequently Asked Questions">FAQ</abbr></a>
 				</p>
-				<form id="upload-form" enctype="multipart/form-data" method="post" action="upload.php?output=html">
+				<form id="upload-form" enctype="multipart/form-data" method="post" action="/upload.php?output=html">
 					<button aria-label="click to select file or files to upload" dropzone="copy" id="upload-btn" class="btn" type="button" title="Select or drop file(s)"></button>
 					<input data-max-size="128MiB" id="upload-input" multiple name="files[]" type="file">
 					<input type="submit" value="Submit">
@@ -73,12 +73,7 @@
 			<section class="alert alert-info">
 				<strong>Smutty Horse Web App</strong> — You can now install Smutty Horse as a Web app on those platforms that support this (such as Android) and use it as a sharing destination for links to files.
 			</section>
-			<aside class="alert file-count">
-				<strong itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
-					<link href="https://schema.org/ReceiveAction" itemprop="interactionType">
-					Currently hosting <!--# include file="file_count.txt" -->
-				</strong>
-			</aside>
+			<!--# include file="file_count.html" -->
 <!-- 			<p class="alert alert-error">
 				<strong>Malware scans are run daily</strong> &mdash; files identified as malware will be removed without notice.
 			</p> -->
