@@ -1,0 +1,2 @@
+# gay/
+This subdirectory originally represented a mounting point for a S3 share that uploaded files would be copied to.  It now contains files that should reside on whatever S3-compatible share is used.
