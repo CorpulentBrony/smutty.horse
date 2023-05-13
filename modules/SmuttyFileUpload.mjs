@@ -1,6 +1,7 @@
 // <!--# if expr="$isModuleLoad != false" -->
 import { HASH_DIGEST_ALGORITHM, UPLOAD_ENDPOINT } from "./SmuttyConstants.mjs";
 import { SmuttyRow } from "./SmuttyRow.mjs";
+// import { SmuttyStore } from "./SmuttyStore.mjs";
 
 export
 // <!--# endif -->
@@ -21,7 +22,7 @@ class SmuttyFileUpload {
 					const digestArray = new self.Uint8Array(await self.crypto.subtle.digest(HASH_DIGEST_ALGORITHM, event.target.result));
 					const hash = self.Array.prototype.map.call(digestArray, (value) => value.toString(16).padStart(2, "0")).join("");
 					const search = new self.URLSearchParams({ hash, name: this.file.name, size: this.file.size });
-					const response = await self.fetch(`${UPLOAD_ENDPOINT}?${search.toString()}`);
+					const response = await self.fetch(`${UPLOAD_ENDPOINT}?${search.toString()}`, { importance: "high" });
 					const result = await response.json();
 					fileReader.removeEventListener("error", reject, { once: true, passive: true });
 					fileReader.removeEventListener("progress", this.handlers.progress, { passive: true });
@@ -58,8 +59,10 @@ class SmuttyFileUpload {
 		if (xhr.status === 200) {
 			const response = self.JSON.parse(xhr.responseText);
 
-			if (response.success)
+			if (response.success) {
 				this.row.url = response.files[0].url;
+				// SmuttyStore.entry("uploadedFiles", () => []).push(response.files[0]);
+			}
 			else
 				this.row.error = "Error: " + response.description;
 		} else if (xhr.status === 413)

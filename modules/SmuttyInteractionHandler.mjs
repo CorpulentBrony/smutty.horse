@@ -26,7 +26,6 @@ class SmuttyInteractionHandler {
 
 		if (this.dragCount === 1)
 			this.uploadButton.style.setProperty("--upload-btn-text", `"${UPLOAD_BUTTON_TEXT_ON_DRAG}"`);
-			// this.uploadButton.textContent = UPLOAD_BUTTON_TEXT_ON_DRAG;
 		this.dragCount++;
 	}
 	static handleDragAway(event) {
@@ -35,8 +34,6 @@ class SmuttyInteractionHandler {
 
 		if (this.dragCount === 0)
 			this.uploadButton.style.setProperty("--upload-btn-text", this.uploadButtonDefaultText);
-			// this.uploadButton.style.removeProperty("--upload-btn-text");
-			// this.uploadButton.textContent = this.uploadButtonDefaultText;
 	}
 	static handleDrop(event) {
 		this.handleDragAway(event);
@@ -53,3 +50,4 @@ class SmuttyInteractionHandler {
 	}
 	constructor() { throw new self.Error("Attempted to instantiate static class."); }
 }
+SmuttyInteractionHandler.dragCount = 0;

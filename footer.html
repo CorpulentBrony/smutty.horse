@@ -1,61 +1,81 @@
 <footer role="contentinfo">
 	<nav aria-labelledby="footer-label--smutty">
-		<h1 id="footer-label--smutty"><a href="/" rel="home">Smutty Horse</a></h1>
+		<h1 id="footer-label--smutty"><a href="/" rel="home" title="Smutty Horse">Smutty&nbsp;Horse</a></h1>
 		<ul>
-			<li><a <!--# if expr="$request_uri = /" -->aria-current="page" <!--# endif -->href="/" rel="home">Home</a></li>
+			<li><a <!--# if expr="$request_uri = /" -->aria-current="page" <!--# endif -->href="/" rel="home" title="Home">Home</a></li>
 			<li><a <!--# if expr="$request_uri = /faq.html/" -->aria-current="page" <!--# endif -->href="/faq.html" rel="help privacy-policy terms-of-service"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
 			<li><a href="/faq.html#terms-of-service" rel="terms-of-service"><abbr title="Terms Of Service">TOS</abbr></a></li>
-			<li><a href="/faq.html#privacy-policy" rel="privacy-policy">Privacy</a></li>
-			<li><a href="/faq.html#cookie-policy" rel="cookie-policy">Cookies</a></li>
+			<li><a href="/faq.html#privacy-policy" rel="privacy-policy" title="Privacy">Privacy</a></li>
+			<li><a href="/faq.html#cookie-policy" rel="cookie-policy" title="Cookies">Cookies</a></li>
 		</ul>
 	</nav>
 	<nav aria-labelledby="footer-label--tools">
-		<h1 id="footer-label--tools"><a <!--# if expr="$request_uri = /tools.html/" -->aria-current="page" <!--# endif -->href="/tools.html">Tools</a></h1>
+		<h1 id="footer-label--tools"><a <!--# if expr="$request_uri = /tools.html/" -->aria-current="page" <!--# endif -->href="/tools.html" title="Tools">Tools</a></h1>
 		<ul>
-			<li><a download href="/smutty.horse.sxcu">ShareX Custom Uploader</a></li>
+			<li><a download href="/smutty.horse.sxcu" title="ShareX Custom Uploader">ShareX Custom Uploader</a></li>
 		</ul>
 	</nav>
 	<nav aria-labelledby="footer-label--donations">
 		<header>
 			<h1 id="footer-label--donations">Donations</h1>
-			<aside>Help offset hosting costs</aside>
+			<aside><i>Offsets&nbsp;hosting&nbsp;costs</i></aside>
 		</header>
 		<ul>
-			<li><a href="bitcoin:372izNNKAmxhHBRLY8KVbkVfedHsZPB9jZ?label=Smutty-Horse&message=Donation%20for%20Smutty%20Horse" rel="external noopener payment">Bitcoin</a></li>
-			<li><a href="//commerce.coinbase.com/checkout/81e6f8fe-7797-43d9-b416-f2a6369d0177" rel="external noopener payment" target="_blank">Coinbase</a></li>
-			<li><a href="//www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU299SX5VWBYU&source=url" rel="external noopener payment" target="_blank">PayPal</a></li>
+			<li><a href="<!--# echo encoding="none" var="bitcoinUrl" -->" rel="external noopener payment" title="Bitcoin">Bitcoin</a></li>
+			<li><a href="<!--# echo encoding="none" var="ethereumUrl" -->" rel="external noopener payment" title="Ethereum">Ethereum</a></li>
+			<li><a href="<!--# echo encoding="none" var="moneroUrl" -->" rel="external noopener payment" title="Monero">Monero</a></li>
+			<!-- <li><a href="<!--# echo encoding="none" var="litecoinUrl" -->" rel="external noopener payment" title="Litecoin">Litecoin</a></li> -->
+			<li><a href="<!--# echo encoding="none" var="dogecoinUrl" -->" rel="external noopener payment" title="Dogecoin">Dogecoin</a></li>
+			<li><a href="//commerce.coinbase.com/checkout/81e6f8fe-7797-43d9-b416-f2a6369d0177" rel="external noopener payment" target="_blank" title="Coinbase">Coinbase</a></li>
+			<li><a href="//www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CU299SX5VWBYU&source=url" rel="external noopener payment" target="_blank" title="PayPal">PayPal</a></li>
 		</ul>
 	</nav>
 	<nav aria-labelledby="footer-label--affiliates">
 		<h1 id="footer-label--affiliates">Affiliates</h1>
 		<ul>
-			<li><a href="//cutemares.com" rel="external" target="_blank">Cute Mares</a></li>
-			<li><a href="//iwtcits.com" rel="external" target="_blank"><abbr title="I Want To Cum Inside Twilight Sparkle">IWTCITS</abbr></a></li>
-			<li><a href="//mlp.one" rel="external" target="_blank">/<abbr title="My Little Pony">mlp</abbr>/odcast</a></li>
-			<li><a href="//plushie.horse" rel="external" target="_blank">Plushie Horse</a></li>
-			<li><a href="//yayponi.es" rel="external noopener" target="_blank">Yayponi.es</a></li>
+			<li><a href="//twibooru.org/" rel="external" title="Twibooru">Twibooru</a></li>
+			<li><a href="//pony.tube/" rel="external" title="Pony.Tube">Pony.Tube</a></li>
+			<!-- <li><a href="//cutemares.com/" rel="external" title="Cute Mares">Cute Mares</a></li> -->
+			<li><a href="//mlp.chat/" rel="external">mlp.chat</a></li>
+			<li><a href="//iwtcits.com/" rel="external"><abbr title="I Want To Cum Inside Twilight Sparkle">IWTCITS</abbr></a></li>
+			<li><a href="//mlp.one/" rel="external" title="/mlp/odcast">/<abbr title="My Little Pony">mlp</abbr>/odcast</a></li>
+			<li><a href="//mare.biz/" rel="external" title="Mare Bits">Mare Bits</a></li>
+			<!-- <li><a href="//plushie.horse/" rel="external" title="Plushie Horse">Plushie Horse</a></li> -->
+			<!-- <li><a href="//yayponi.es/" rel="external noopener" title="Yayponies Mirror">Yayponi.es</a></li> -->
 		</ul>
 	</nav>
 </footer>
 <style>
 	footer[role=contentinfo] {
+		--aside-font-size: calc(5rem / 6);
+		--header-margin: 1.2rem;
 		align-content: center;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
 		justify-content: space-evenly;
-		margin: 3rem auto;
+		margin: 2rem auto;
 		max-width: 100%;
-		width: 60rem;
+		width: 50rem;
 	}
 	footer[role=contentinfo] nav { width: 10rem; }
 	footer[role=contentinfo] abbr { text-decoration: none; }
-	footer[role=contentinfo] aside { font-size: smaller; }
-	footer[role=contentinfo] h1, footer[role=contentinfo] header { margin: 1.2rem 0; }
+	footer[role=contentinfo] aside {
+		font-size: var(--aside-font-size);
+		line-height: 1;
+	}
+	footer[role=contentinfo] h1 {
+		font-size: 1.5rem;
+		margin: var(--header-margin) 0;
+	}
+	footer[role=contentinfo] header { margin: var(--header-margin) 0 calc(var(--header-margin) - var(--aside-font-size)); }
 	footer[role=contentinfo] header > h1 { margin: 0; }
 	footer[role=contentinfo] ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+	}
+	@media (max-width: 1200px) {
+		footer[role=contentinfo] h1 { font-size: calc(1.05rem + 0.6vw); }
 	}
 </style>

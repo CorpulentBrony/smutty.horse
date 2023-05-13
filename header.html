@@ -1,7 +1,20 @@
+<!--# set value="Donation%20for%20Smutty%20Horse" var="donationMessage" -->
+<!--# set value="372izNNKAmxhHBRLY8KVbkVfedHsZPB9jZ" var="bitcoinAddress" -->
+<!--# set value="bitcoin:$bitcoinAddress?label=Smutty-Horse&message=$donationMessage" var="bitcoinUrl" -->
+<!--# set value="0xFFF70993C6C260315ceb3A74CE202A97d356226F" var="ethereumAddress" -->
+<!--# set value="ethereum:$ethereumAddress" var="ethereumUrl" -->
+<!--# set value="897vZij8Hcj6FqLXAUgdaFAnsCheLk4fLQ5o9fKQAWsYADKvaEJ777MdCao2zsn8u7JirCUEdfb61UFXFn7E4scj2nF9py1" var="moneroAddress" -->
+<!--# set value="monero:$moneroAddress?tx_description=$donationMessage" var="moneroUrl" -->
+<!--# set value="ltc1q6s8lfcngu3nd2vjry3y6vlc6uhpv6227djj97a" var="litecoinAddress" -->
+<!--# set value="litecoin:$litecoinAddress?message=$donationMessage" var="litecoinUrl" -->
+<!--# set value="DFH8rn4JXDnEdjn9GDCKEeh2k8i2QTbhGj" var="dogecoinAddress" -->
+<!--# set value="dogecoin:$dogecoinAddress?message=$donationMessage" var="dogecoinUrl" -->
+<!--# set value="UA-53253741-14" var="googleAnalyticsId" -->
 <meta charset="utf-8">
+<link href="<!--# echo encoding="none" var="canonicalUrl" -->" rel="canonical self" type="text/html">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<link href="https://www.google-analytics.com" rel="dns-prefetch preconnect">
-<link as="script" href="https://www.googletagmanager.com/gtag/js?id=UA-53253741-14" rel="preload" type="application/javascript">
+<link href="https://www.google-analytics.com" importance="high" rel="dns-prefetch preconnect">
+<link as="script" href="https://www.googletagmanager.com/gtag/js?id=<!--# echo var="googleAnalyticsId" -->" rel="preload" type="application/javascript">
 <link as="script" href="https://www.google-analytics.com/analytics.js" rel="preload" type="application/javascript">
 <link as="script" href="/app.js" importance="high" rel="preload" type="application/javascript">
 <link as="image" href="/img/launch.svg?fill=%239df" importance="high" rel="preload" type="image/svg+xml">
@@ -12,8 +25,8 @@
 <meta content="Smutty Horse · Pony File Hosting" name="application-name">
 <meta content="https://smutty.horse" name="application-url">
 <meta content="Twifag" name="author">
-<meta content="372izNNKAmxhHBRLY8KVbkVfedHsZPB9jZ" name="bitcoin">
-<meta content="372izNNKAmxhHBRLY8KVbkVfedHsZPB9jZ" name="microtip">
+<meta content="<!--# echo var="bitcoinAddress" -->" name="bitcoin">
+<meta content="<!--# echo var="bitcoinAddress" -->" name="microtip">
 <meta content="#2d2d2d" name="theme-color">
 <meta content="otaku12" property="fb:admins">
 <meta content="summary" name="twitter:card">
@@ -29,26 +42,26 @@
 <meta content="website" property="og:type">
 <meta content="<!--# echo encoding="none" var="title" -->" name="twitter:title">
 <meta content="<!--# echo encoding="none" var="description" -->" name="twitter:description">
-<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="yes" name="mobile-web-app-capable">
 <meta content="telephone=no" name="format-detection">
 <title><!--# echo encoding="none" var="title" --></title>
 <link href="//twitter.com/CorpulentBrony" rel="author" title="Corpulent Brony" type="text/html">
 <link href="//horse.best" importance="high" rel="bestpony" title="Twilight Sparkle is Best Pony" type="text/html">
 <link href="//github.com/CorpulentBrony/smutty.horse" rel="code-repository content-repository" title="GitHub Repository" type="text/html">
 <link href="/" rel="index" type="text/html">
-<link href="bitcoin:372izNNKAmxhHBRLY8KVbkVfedHsZPB9jZ?label=Smutty-Horse&message=Donation%20for%20Smutty%20Horse" rel="payment" title="Donate some Bitcoin">
+<link href="<!--# echo encoding="none" var="bitcoinUrl" -->" rel="payment" title="Donate some Bitcoin">
 <link href="//schema.org/WebPage" rel="type" type="text/html">
-<link rel="icon" href="/favicon.ico" importance="low" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/favicon.ico" importance="low" sizes="128x128 64x64 48x48 32x32 16x16" type="image/vnd.microsoft.icon">
 <link rel="apple-touch-icon" href="/favicon.png" importance="low" type="image/png">
-<script async src="/app.js"></script>
+<script async importance="high" src="/app.js"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53253741-14"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<!--# echo var="googleAnalyticsId" -->"></script>
 <script>
 	"use strict";
 	self.dataLayer = self.dataLayer || [];
 	function gtag() { dataLayer.push(arguments); }
 	gtag("js", new self.Date());
-	gtag("config", "UA-53253741-14");
+	gtag("config", "<!--# echo var="googleAnalyticsId" -->");
 </script>
 <!-- below is for linking to social media sites, kinda weird not having some values for sameAs: "sameAs": "https://www.youtube.com/channel/UCuyOFiGHWoeLTBmB9bk-qrg", -->
 <script type="application/ld+json">
