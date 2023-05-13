@@ -3,11 +3,12 @@
 <browserconfig>
 	<msapplication>
 		<tile>
-			<square70x70logo src="https://smutty.horse/favicon.png"/>
-			<square150x150logo src="https://smutty.horse/favicon.png"/>
+			<square70x70logo src="https://smutty.horse/favicon.png" />
+			<square150x150logo src="https://smutty.horse/favicon.png" />
 			<!-- <wide310x150logo src=""/> -->
-			<square310x310logo src="https://smutty.horse/favicon.png"/>
+			<square310x310logo src="https://smutty.horse/favicon.png" />
 			<TileColor>#2d2d2d</TileColor>
+			<TileImage src="https://smutty.horse/favicon.png" />
 		</tile>
 	</msapplication>
 </browserconfig>

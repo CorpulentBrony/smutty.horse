@@ -1,8 +1,8 @@
 #!/usr/local/bin/php
 <?php
 	ini_set("zlib.output_compression", 0);
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 
 	require_once "includes/database.inc.php";
 	require_once "vendor/autoload.php";

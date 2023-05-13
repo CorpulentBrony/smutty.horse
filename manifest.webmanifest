@@ -1,6 +1,7 @@
 {
 	"name": "Smutty Horse · Pony File Hosting",
 	"short_name": "Smutty Horse",
+	"categories": ["photo", "productivity", "utilities"],
 	"description": "A free simple to use file hosting service that lets you share your photos, documents, music, videos, and more with others.",
 	"background_color": "#2d2d2d",
 	"developer": {
@@ -10,16 +11,17 @@
 	"display": "standalone",
 	"icons": [
 		{ "sizes": "512x512", "src": "/favicon.png", "type": "image/png" },
+		{ "sizes": "192x192", "src": "/favicon.png", "type": "image/png" },
 		{ "sizes": "128x128 64x64 48x48 32x32 16x16", "src": "/favicon.ico", "type": "image/vnd.microsoft.icon" }
 	],
 	"orientation": "portrait",
-	"related_applications": [{
-		"platform": "web",
-		"url": "https://smutty.horse/"
-	}],
+	"prefer_related_applications": false,
 	"scope": "/",
+	"serviceworker": { "src": "/sw.js" },
 	"share_target": {
 		"action": "/upload.php",
+		"enctype": "application/x-www-form-urlencoded",
+		"method": "GET",
 		"params": {
 			"title": "title",
 			"text": "text",

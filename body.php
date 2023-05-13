@@ -10,8 +10,7 @@
 <style>
 	body {
 		background-attachment: fixed;
-		background-color: rgb(45, 45, 45); /* hsl(0, 0, 18%) */
-		/*background-image: linear-gradient(rgb(60, 60, 60), #000);*/
+		background-color: rgb(45, 45, 45);
 	}
 	main, main + footer { transition: transform 0.5s cubic-bezier(0, 0, 0.8, 1.2); }
 	main { transform: translateY(-500%); }
@@ -33,6 +32,19 @@
 		height: 8px;
 		width: 8px;
 	}
+	@media (max-width: 84rem) {
+		#smutty-bg {
+			left: 0;
+			margin: auto;
+		}
+		#smutty-bg img {
+			max-height: 50vh;
+			max-width: 100%;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		main, main + footer, #smutty-bg { transition: none !important; }
+	}
 </style>
 <?php
 	if (isset($_SERVER["HTTP_SAVE_DATA"]) && strtolower($_SERVER["HTTP_SAVE_DATA"]) === "on")
@@ -43,7 +55,7 @@
 	$mimeTypeAttribute = empty($grills["mime"]) ? "" : " type=\"{$grills["mime"]}\"";
 ?>
 <figure id="smutty-bg" itemscope itemtype="https://schema.org/ImageObject" role="presentation">
-	<img alt="" importance="high" role="presentation" sizes="(min-width: 1340px) 30vw, 100vw" src="<?= $grills[0] ?>" srcset="<?= $grills[2] ?> 1280w, <?= $grills[1] ?> 800w, <?= $grills[0] ?> 320w"<?= $mimeTypeAttribute ?>>
+	<img alt="" importance="high" role="presentation" sizes="(min-width: 84rem) 30vw, 75vw" src="<?= $grills[0] ?>" srcset="<?= $grills[2] ?> 1280w, <?= $grills[1] ?> 800w, <?= $grills[0] ?> 320w"<?= $mimeTypeAttribute ?>>
 	<?= implode("\n", $artistMetadata) ?>
 	<link itemprop="contentUrl" href="<?= $grills[0] ?>"<?= $mimeTypeAttribute ?>>
 	<link itemprop="contentUrl" href="<?= $grills[1] ?>"<?= $mimeTypeAttribute ?>>
