@@ -58,7 +58,8 @@ class SmuttyRow {
 	}
 	set url(url) {
 		const link = this.initTemplateUrl();
-		const fileUrlCopied = this.templateUrl.querySelector(".file-url-copied");
+		const canShare = "share" in self.navigator && self.navigator.share !== undefined;
+		const fileUrlCopied = this.templateUrl.querySelector(`.${ELEMENT_CLASSES.FILE_MESSAGE}`);
 		let messageTimer = 0;
 		const showMessage = (isSuccess) => {
 			self.requestAnimationFrame(() => {
@@ -76,7 +77,7 @@ class SmuttyRow {
 				}, 5500);
 			});
 		};
-		const buttonHandler = async () => {
+		const clipboardButtonHandler = async () => {
 			try {
 				await this.constructor.writeTextToClipboard(url);
 				showMessage(true);
@@ -86,7 +87,15 @@ class SmuttyRow {
 		};
 		link.textContent = url.replace(/.*?:\/\//g, "");
 		link.href = url;
-		this.templateUrl.querySelector("button").addEventListener("click", () => buttonHandler().catch(console.error), { passive: true });
+		this.templateUrl.querySelector(`.${ELEMENT_CLASSES.CLIPBOARD_BUTTON}`).addEventListener("click", () => clipboardButtonHandler().catch(self.console.error), { passive: true });
+
+		if (canShare) {
+			const shareButton = this.templateUrl.querySelector(`.${ELEMENT_CLASSES.SHARE_BUTTON}`);
+			const shareButtonHandler = () => self.navigator.share({ url }).catch(self.console.error);
+			shareButton.setAttribute("aria-hidden", "false");
+			shareButton.removeAttribute("hidden");
+			shareButton.addEventListener("click", shareButtonHandler, { passive: true });
+		}
 		this.showUrl();
 	}
 	initTemplateUrl() {
