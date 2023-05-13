@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" 🦄>
+<html lang="en" prefix="dc: http://purl.org/dc/terms/ fb: http://ogp.me/ns/fb# og: http://ogp.me/ns# xsd: http://www.w3.org/2001/XMLSchema#" 🦄>
 	<head>
-		<link href="https://smutty.horse/" rel="canonical self" type="text/html">
-		<link href="https://u.smutty.horse/" rel="dns-prefetch preconnect">
+		<!--# set value="https://smutty.horse/" var="canonicalUrl" -->
 		<!--# set value="Smutty Horse · Pony File Hosting" var="title" -->
 		<!--# set value="A free simple to use file hosting service that lets you share your photos, documents, music, videos, and more with others." var="description" -->
 		<!--# set value="pony, clop, porn, images, sharing, sharex, pomf, smut, faggotry" var="keywords" -->
 		<!--# include file="/header.html" -->
+		<link href="https://u.smutty.horse/" importance="low" rel="dns-prefetch preconnect">
+		<link href="https://pone.social/@corpubro" rel="me">
 		<link href="/modules/index.mjs" importance="high" rel="modulepreload">
 		<link href="/modules/SmuttyApp.mjs" rel="modulepreload">
 		<link href="/modules/SmuttyFileUpload.mjs" rel="modulepreload">
@@ -17,7 +18,7 @@
 		<meta name="msvalidate.01" content="F22D6FD9077AEB86C48E282176E51F9C">
 		<link href="//schema.org/WebApplication" rel="type" type="text/html">
 		<script async importance="high" src="/modules/index.mjs" type="module"></script>
-		<script async nomodule src="/index.js"></script>
+		<script async importance="high" nomodule src="/index.js"></script>
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
@@ -32,10 +33,10 @@
 				]
 			}
 		</script>
-		<link as="image" href="/img/copy.svg?fill=%23c9c9c9" importance="low" rel="prefetch" type="image/svg+xml">
-		<link as="image" href="/img/copy.svg?fill=%23fff" importance="low" rel="prefetch" type="image/svg+xml">
-		<link as="image" href="/img/launch.svg?fill=%23c9c9c9" importance="low" rel="prefetch" type="image/svg+xml">
-		<link as="image" href="/img/launch.svg?fill=%23fff" importance="low" rel="prefetch" type="image/svg+xml">
+		<link as="image" href="/img/copy.svg?fill=%23c9c9c9" importance="low" prefetch rel="prefetch" type="image/svg+xml">
+		<link as="image" href="/img/copy.svg?fill=%23fff" importance="low" prefetch rel="prefetch" type="image/svg+xml">
+		<link as="image" href="/img/launch.svg?fill=%23c9c9c9" importance="low" prefetch rel="prefetch" type="image/svg+xml">
+		<link as="image" href="/img/launch.svg?fill=%23fff" importance="low" prefetch rel="prefetch" type="image/svg+xml">
 	</head>
 	<body>
 		<!--# include virtual="/body.php" -->
@@ -47,11 +48,11 @@
 				<p class="lead">
 					Max upload size is <data value="134217728">128&nbsp;<abbr title="mebibyte">MiB</abbr></data>, read the <a href="/faq.html" itemprop="softwareHelp" rel="help privacy-policy terms-of-service"><abbr title="Frequently Asked Questions">FAQ</abbr></a>
 				</p>
-				<form id="upload-form" enctype="multipart/form-data" method="post" action="/upload.php?output=html">
+<!-- 				<form id="upload-form" enctype="multipart/form-data" method="post" action="/upload.php?output=html">
 					<button aria-label="click to select file or files to upload" dropzone="copy" id="upload-btn" class="btn" type="button" title="Select or drop file(s)"></button>
 					<input data-max-size="128MiB" id="upload-input" multiple name="files[]" type="file">
 					<input type="submit" value="Submit">
-				</form>
+				</form> -->
 				<ul id="upload-filelist"></ul>
 				<template id="upload-filelist-item">
 					<li>
@@ -66,12 +67,17 @@
 					<span class="file-url">
 						<a rel="noopener" target="_blank"></a>
 						<span aria-hidden="true" class="file-url-copied"></span>
-						<button aria-label="copy link to clipboard" class="upload-clipboard-btn" title="Copy Link to Clipboard"></button>
+						<button aria-hidden="true" aria-label="share link" class="upload-common-btn upload-share-btn" hidden title="Share Link"></button>
+						<button aria-label="copy link to clipboard" class="upload-clipboard-btn upload-common-btn" title="Copy Link to Clipboard"></button>
 					</span>
 				</template>
 			</div>
+			<section class="alert alert-error">
+				Due to repeated uploading of child pornography and related images, new uploads will be disabled until we can find a solution to prevent this from happening in the future.  We apologize for the inconvenience.
+			</section>
+			</section>
 			<section class="alert alert-info">
-				<strong>Smutty Horse Web App</strong> — You can now install Smutty Horse as a Web app on those platforms that support this (such as Android) and use it as a sharing destination for links to files.
+				<strong>Smutty Horse Web App</strong> — You can now <span id="install-link">install Smutty Horse as a Web app</span> on those platforms that support this (such as Android) and use it as a sharing destination for links to files.
 			</section>
 			<!--# include file="file_count.html" -->
 <!-- 			<p class="alert alert-error">
@@ -80,6 +86,9 @@
 <!-- 			<p class="alert alert-info">
 				<strong>Smutty Horse is free to use, but our hosting costs are far from it</strong> &mdash; donations are what keep Smutty Horse alive, free, and fast.<span class="donate-btns"></span>
 			</p> -->
+			<meta content="ARIA" itemprop="accessibilityAPI">
+			<meta content="highContrastDisplay" itemprop="accessibilityFeature">
+			<meta content="textual" itemprop="accessModeSufficient">
 			<meta content="true" itemprop="isAccessibleForFree">
 			<span itemprop="offers" itemscope itemtype="https://schema.org/Offer" role="presentation">
 				<meta content="0" itemprop="price">
@@ -87,9 +96,5 @@
 			</span>
 		</main>
 		<!--# include file="/footer.html" -->
-<!-- 		<script>
-			self.requestAnimationFrame(() => self.document.querySelector("footer[role=contentinfo] a[href=\"/\"]").setAttribute("aria-current", "page"));
-			// <!--# echo var="request_uri" -->
-		</script> -->
 	</body>
 </html>

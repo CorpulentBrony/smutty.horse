@@ -1,4 +1,5 @@
 <?php
+	exit("Due to repeated uploading of child pornography and related images, new uploads will be disabled until we can find a solution to prevent this from happening in the future.  We apologize for the inconvenience.");
 	session_start();
 
 	/**
@@ -70,8 +71,7 @@
 	 *
 	 * @return array
 	 */
-	function uploadFile($file, bool $checkIfUploaded = true)
-	{
+	function uploadFile($file, bool $checkIfUploaded = true) {
 		global $db;
 		global $FILTER_MODE;
 		global $FILTER_MIME;
@@ -137,13 +137,13 @@
 		if (empty($_SESSION["id"])) {
 			// Query if user is NOT logged in
 			$q = $db->prepare("INSERT INTO files (hash, originalname, filename, size, date, " .
-						"expire, delid) VALUES (:hash, :orig, :name, :size, :date, " .
-							":exp, :del)");
+						"expire, delid, ip) VALUES (:hash, :orig, :name, :size, :date, " .
+							":exp, :del, :ip)");
 		} else {
 			// Query if user is logged in (insert user id together with other data)
 			$q = $db->prepare("INSERT INTO files (hash, originalname, filename, size, date, " .
-						"expire, delid, user) VALUES (:hash, :orig, :name, :size, :date, " .
-							":exp, :del, :user)");
+						"expire, delid, user, ip) VALUES (:hash, :orig, :name, :size, :date, " .
+							":exp, :del, :user, :ip)");
 			$q->bindValue(":user", $_SESSION["id"], PDO::PARAM_INT);
 		}
 
@@ -155,6 +155,7 @@
 		$q->bindValue(":date", date("Y-m-d"), PDO::PARAM_STR);
 		$q->bindValue(":exp", null, PDO::PARAM_STR);
 		$q->bindValue(":del", sha1($file->tempfile), PDO::PARAM_STR);
+		$q->bindValue(":ip", $_SERVER["REMOTE_ADDR"], PDO::PARAM_STR);
 		$q->execute();
 
 		return array(
