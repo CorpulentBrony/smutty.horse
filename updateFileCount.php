@@ -1,14 +1,14 @@
 #!/usr/local/bin/php
 <?php
 	ini_set("zlib.output_compression", 0);
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 
 	require_once "includes/database.inc.php";
 
 	const BYTE_SCALE = 2;
 	const BYTE_UNIT_POWERS = ["B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
-	const DESTINATION_FILE_NAME = "file_count.html";
+	const DESTINATION_FILE_NAME = __DIR__ . "/file_count.html";
 	const SQL = "select count(*) as NumFiles, sum(size) as TotalFileSize, sum(views) as NumViews, sum(case when views = 0 then 1 else views end * size) as TotalViews from files;";
 
 	interface DataInterface {
@@ -117,10 +117,12 @@
 <aside class="alert file-count">
 	<strong>
 		<span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+			<meta content="<?= date(\DateTime::ISO8601) ?>" datatype="xsd:dateTime" itemprop="dateModified" property="dc:modified">
 			<link href="https://schema.org/ReceiveAction" itemprop="interactionType">
 			Currently hosting <?= $numFiles->toHtml(["itemprop" => "userInteractionCount"]) ?> files (<?= $totalFileSize->toHtml() ?>)
 		</span><br>
 		<span itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter">
+			<meta content="<?= date(\DateTime::ISO8601) ?>" datatype="xsd:dateTime" itemprop="dateModified" property="dc:modified">
 			<link href="https://schema.org/ViewAction" itemprop="interactionType">
 			Files viewed <?= $numViews->toHtml(["itemprop" => "userInteractionCount"]) ?> times (<?= $totalViewSize->toHtml() ?> transferred)
 		</span>
