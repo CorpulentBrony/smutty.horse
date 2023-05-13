@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" 🦄>
 	<head>
-		<link href="https://smutty.horse/tools.html" rel="canonical self" type="text/html">
+		<!--# set value="https://smutty.horse/tools.html" var="canonicalUrl" -->
 		<!--# set value="Smutty Horse · Tools" var="title" -->
-		<!--# set value="A free simple to use file hosting service that lets you share your photos, documents, music, videos, and more with others." var="description" -->
+		<!--# set value="Externally hosted tools that help you better make use of Smutty Horse from desktop or mobile platforms." var="description" -->
 		<!--# set value="tools, pony, clop, porn, images, sharing, sharex, pomf, smut, faggotry" var="keywords" -->
 		<!--# include file="/header.html" -->
 		<script type="application/ld+json">
@@ -49,10 +49,15 @@
 			<header class="jumbotron">
 				<h1>Smutty Horse Tools</h1>
 				<aside class="lead">
-					Easier uploading to <a href="/" rel="home index">Smutty Horse</a>
+					Easier uploading to <a href="/" rel="home index">Smutty Horse</a>!
 				</aside>
 			</header>
 			<ul>
+				<li>
+					<h2>Progressive Web App</h2>
+					<h3>Enables Android and Chrome sharing</h3>
+					The Smutty.Horse Progressive Web App includes the ability to act as the target of a share request.  On Android, this means it is added to the list of sharing destinations.  Every 30 days, you should be prompted to install the app if you haven't already.  Alternatively, on the <a href="/" rel="home index">home page</a> of the site the text <q>install Smutty Horse</q> should be a link if your operating system is capable of installing <abbr title="Progressive Web Apps">PWAs</abbr>.
+				</li>
 				<li>
 					<h2 id="label--sharex">ShareX</h2>
 					<h3>Windows-based screen capture and file sharing</h3>
@@ -108,16 +113,7 @@
 						</ul>
 					</nav>
 				</li>
-				<li>
-					<h2 id="label--pomfshare">Pomfshare</h2>
-					<h3>Android share client</h3>
-					Adds a Pomfshare destination to your sharing menu on Android.  To get this to work with Smutty Horse, you'll need to modify at least the <code>app/src/main/java/science/itaintrocket/pomfshare/HostListActivity.java</code> file and add an entry that would look something like:
-					<pre><code>hosts[24] = new Host("smutty.horse", "https://smutty.horse/upload.php?output=gyazo", "128MiB", Host.Type.POMF);</code></pre>
-					No guarantees this one will work, though I am curious and may try to roll a version specifically for Smutty Horse at some point
-					<nav aria-labelledby="label--pomfshare">
-						<a href="https://github.com/Nyubis/Pomfshare" rel="code-repository external noopener" target="_blank">Download</a>
-					</nav>
-				</li>
+			</ul>
 		</main>
 		<!--# include file="/footer.html" -->
 	</body>
