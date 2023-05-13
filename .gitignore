@@ -8,5 +8,6 @@ vendor/
 file_count.html
 gmon.out
 test.php
+!gay/404.html
+!gay/README.md
 !gay/favicon.ico
-!gay/index.html
